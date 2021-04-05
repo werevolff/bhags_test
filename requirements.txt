@@ -1,0 +1,10 @@
+aiohttp[speedups]
+peewee
+peewee-async
+aiopg
+python-dotenv
+python-slugify
+pytest
+marshmallow
+PyHamcrest
+pytest_aiohttp
