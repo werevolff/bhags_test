@@ -44,7 +44,7 @@ class Block(OrderingModelMixin, Model):
     async def increment_views(self) -> None:
         async with objects.atomic():
             await objects.execute(
-                Block.select().for_update().where(self._pk_expr()),
+                Block.select(Block.views).for_update().where(self._pk_expr()),
             )
             self.views = await objects.scalar(
                 Block.update(views=Block.views + 1)
